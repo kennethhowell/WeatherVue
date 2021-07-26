@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <title>Weather Hello World</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     </head>
 
     <body>
 
-        <div id="app">
+<div id="app">
        
-  <div v-html="template"></div>
-       
+  <display-weather></display-weather>
+  <test-component></test-component>
 
-       </div>
+</div>
 
+     
 
     </body>
 
-
+<!-- Import Keys / App -->
     <script src="./keys.js"></script>
     <script src="./main.js"></script>
+
+<!-- Import Components -->
+<script src="./displayWeather.js"></script>
+<script src="./testComponent.js"></script>
+
+<!--  Mount App -->
 <script>
     const mountedApp = app.mount("#app")
 </script>
