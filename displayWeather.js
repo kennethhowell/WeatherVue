@@ -4,7 +4,9 @@ app.component("display-weather", {
 template:
 /*html*/`
 <h1>Hello world!</h1>
-<h4>AJAX response test: {{ weather }}</h4>
+<h4>Current Temperature: {{ weather.data.current.temp + "&deg; F" }}</h4>
+<h4>Humidity: {{ weather.data.current.humidity + '%'}}</h4>
+
 
 `,
 
@@ -14,18 +16,9 @@ data: function(){
     }
 },
 
-mounted: function(){
-    axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.51&lon=-98.64&exclude={part}&appid=" + openWeatherApiKey)
+created: function(){
+    axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.51&lon=-98.64&exclude={part}&units=imperial&appid=" + openWeatherApiKey)
     .then(response => (this.weather = response))
-    // .then(function(response){  
-    //     console.log(this.weather)
-    //     console.log("hey!?")
-    //     console.log(response)
-    //     this.weather = response;
-    //     console.log(this.weather)
-    //     return this.weather = response;
-    // })
-
 }
 
 
