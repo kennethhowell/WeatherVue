@@ -6,7 +6,11 @@ template:
 <h1>Hello world!</h1>
 <h4>Current Temperature: {{ weather.data.current.temp + "&deg; F" }}</h4>
 <h4>Humidity: {{ weather.data.current.humidity + '%'}}</h4>
+<h5>Currently: {{ weather.data.current.weather[0].main }} / {{ weather.data.current.weather[0].description }} </h5>
 
+<div v-for="days in weather.daily">
+{{ days.dt }}
+</div>
 
 `,
 
