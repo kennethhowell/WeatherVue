@@ -34,7 +34,9 @@ data: function(){
 
 created: function(){
     axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.51&lon=-98.64&exclude={part}&units=imperial&appid=" + openWeatherApiKey)
-    .then(response => (this.weather = response))
+    .then(response => {this.weather = response
+    console.log(this)})
+
 }
 
 
